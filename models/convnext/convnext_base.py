@@ -104,7 +104,7 @@ val_pipeline = [
 
 # train
 data_cfg = dict(
-    batch_size = 16,
+    batch_size = 32,
     num_workers = 4,
     train = dict(
         pretrained_flag = False,

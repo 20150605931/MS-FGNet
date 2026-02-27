@@ -43,32 +43,21 @@ train/valid model
 
 ```markup
 # Use the GPU to train the MS-FGNet model
-CUDA_VISIBLE_DEVICES=1 python tools/train.py models/resnet/MS-FGNet.py --device cuda --kflod-validation -1
+CUDA_VISIBLE_DEVICES=1 python tools/train.py models/MS-FGNet/MS-FGNet.py --device cuda --kflod-validation -1
 # Or use the K-fold cross validation to train the MS-FGNet model
-CUDA_VISIBLE_DEVICES=1 python tools/train.py models/resnet/MS-FGNet.py --device cuda --kflod-validation 0
+CUDA_VISIBLE_DEVICES=1 python tools/train.py models/MS-FGNet/MS-FGNet.py --device cuda --kflod-validation 0
 
 
-# Verify the MS-FGNet model. Note that you need to replace test=dict() in models/resnet/MS-FGNet.py with the trained weights
-python tools/evaluation.py models/resnet/MS-FGNet.py --kflod-validation -1
+# Verify the MS-FGNet model. Note that you need to replace test=dict() in models/MS-FGNet/MS-FGNet.py with the trained weights
+python tools/evaluation.py models/MS-FGNet/MS-FGNet.py --kflod-validation -1
 # Or use the following command when performing K-fold cross-validation 
-python tools/evaluation.py models/resnet/MS-FGNet.py --kflod-validation 0
+python tools/evaluation.py models/MS-FGNet/MS-FGNet.py --kflod-validation 0
 
 # Visual CAM picture
-python tools/vis_cam.py ./datasets/test/FA models/resnet/MS-FGNet.py --save-path ./logs/CAM_visualization/FA --target-category 0
+python tools/vis_cam.py ./datasets/test/FA models/MS-FGNet/MS-FGNet.py --save-path ./logs/CAM_visualization/FA --target-category 0
 ```
 
 # Data
 If you need data, please contact the authors by email in time.
 
-
-## Reference
-
-    @repo{2020mmclassification,
-        title={OpenMMLab's Image Classification Toolbox and Benchmark},
-        author={MMClassification Contributors},
-        howpublished = {\url{https://github.com/open-mmlab/mmclassification}},
-        year={2020}
-    }
-
-    this repo is based on [repo](https://github.com/Fafa-DL/Awesome-Backbones)
 

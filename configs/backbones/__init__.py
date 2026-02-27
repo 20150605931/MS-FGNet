@@ -6,7 +6,8 @@ from .vgg import VGG
 from .resnet import ResNet, ResNetV1c, ResNetV1d
 from .respartnet import ResPartNet
 from .respartnet_attention import Attention_ResPartNet,ResPartNet_Tokken_Space_Attention,ResPartNet_CBAM,TSA_ResPartNet,TSA_1_ResPartNet,TSA_2_ResPartNet,ResPartNet_CA,TSA_ResPartNet_CBAM, Tokken_ResPartNet, Self_Attention_ResPartNet, Spectrum_ResPartNet, Spectrum_ECA_ResPartNet, Spectrum_SE_ResPartNet, spatial_Spectrum_ResPartNet, CBAM_ResPartNet,Recurrent_Tokken_ResPartNet
-from .respartnet_attention import ResPartNet_CBAM_Recurrent,Tokken_ResPartNet_CBAM_Recurrent_v2
+from .respartnet_attention import ResPartNet_CBAM_Recurrent,Tokken_ResPartNet_CBAM_Recurrent,Tokken_ResPartNet_CBAM_Recurrent_v2,Tokken_ResPartNet_CBAM_Recurrent_v2_dino_v3,Tokken_ResPartNet_CBAM_Recurrent_v2_dino_v2_ConvNeXt_V2,Tokken_ResPartNet_CBAM_Recurrent_v2_dino_v3_ConvNeXt_V2_vit,Tokken_ResPartNet_CBAM_Recurrent_v2_dino_v3_ConvNeXt_V2_2,Tokken_ResPartNet_convNext,Tokken_ResPartNet_dinov3
+from .respartnet_attention_0 import Attention_ResPartNet_0
 from .shufflenet_v1 import ShuffleNetV1
 from .shufflenet_v2 import ShuffleNetV2
 from .efficientnet import EfficientNet
@@ -64,4 +65,6 @@ __all__ = [
     "ResPartNet_CBAM",'TSA_ResPartNet','TSA_1_ResPartNet','TSA_2_ResPartNet', 'ResPartNet_CA','TSA_ResPartNet_CBAM','Tokken_ResPartNet',
     'Self_Attention_ResPartNet', 'Spectrum_ResPartNet','Spectrum_ECA_ResPartNet','Spectrum_SE_ResPartNet','spatial_Spectrum_ResPartNet',"CBAM_ResPartNet",
     'RecurrentNet','Recurrent_Tokken_ResPartNet','ResPartNet_CBAM_Recurrent','Tokken_ResPartNet_CBAM_Recurrent','Tokken_ResPartNet_CBAM_Recurrent_v2',
+    'Tokken_ResPartNet_CBAM_Recurrent_v2_dino_v3','Tokken_ResPartNet_CBAM_Recurrent_v2_dino_v2_ConvNeXt_V2','Tokken_ResPartNet_CBAM_Recurrent_v2_dino_v3_ConvNeXt_V2_vit','Tokken_ResPartNet_CBAM_Recurrent_v2_dino_v3_ConvNeXt_V2_2',
+    'Tokken_ResPartNet_convNext','Tokken_ResPartNet_dinov3',
 ]

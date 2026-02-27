@@ -13,33 +13,33 @@ class RecurrentNet(nn.Module):
         else:
             pretrained = False # make sure
 
-
         self.feature_pool1 = nn.AvgPool2d(kernel_size = 28, stride = 28)
         self.feature_pool2 = nn.AvgPool2d(kernel_size = 14, stride = 14)
         
         self.atten_pool = nn.MaxPool2d(kernel_size = 2, stride = 2)
-        
+       
         self.apn1 = nn.Sequential(
-            nn.Linear(2048 * 7 * 7, 1024),
+            nn.Linear(1024 * 7 * 7, 256),
             nn.Tanh(),
             nn.Dropout(p=0.5, inplace=False),
-            nn.Linear(1024, 3),
+            nn.Linear(256, 3),
             nn.Sigmoid(),
         )
 
         self.apn2 = nn.Sequential(
-            nn.Linear(512 * 14 * 14, 1024),
+            nn.Linear(1024 * 8 * 8, 512),
             nn.Tanh(),
-            nn.Linear(1024, 3),
+            nn.Linear(512, 3),
             nn.Sigmoid(),
         )
         self.crop_resize = AttentionCropLayer()
 
+
     def forward(self, features,x):
 
-        atten1 = self.apn1(self.atten_pool(features).view(-1, 2048 * 7 * 7))
+        atten1 = self.apn1(features.reshape(features.size(0), -1))
         scaledA_x = self.crop_resize(x, atten1 * 224)
-      
+        
         return scaledA_x
 
 class AttentionCropFunction(torch.autograd.Function):
